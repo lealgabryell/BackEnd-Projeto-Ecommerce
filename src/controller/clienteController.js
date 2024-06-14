@@ -28,4 +28,14 @@ exports.Insert = (req, res, next) => {
     }
   })
   .catch(error => next(error));
+};
+
+exports.SearchAll = (req, res, next) => {
+  Cliente.findAll()
+    .then(cliente => {
+      if(cliente){
+        res.status(status.OK).send(cliente);
+      }
+    })
+    .catch(error => next(error));
 }

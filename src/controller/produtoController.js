@@ -23,3 +23,13 @@ exports.Insert = (req, res, next) => {
     })
     .catch((error) => next(error));
 };
+
+exports.SearchAll = (req, res, next) => {
+  Produto.findAll()
+    .then((produto) => {
+      if (produto) {
+        res.status(status.OK).send(produto);
+      }
+    })
+    .catch((error) => next(error));
+};
