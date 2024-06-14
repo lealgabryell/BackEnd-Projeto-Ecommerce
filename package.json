@@ -1,0 +1,27 @@
+{
+  "name": "backen_ecommerce",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lealgabryell/BackEnd-Projeto-Ecommerce.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lealgabryell/BackEnd-Projeto-Ecommerce/issues"
+  },
+  "homepage": "https://github.com/lealgabryell/BackEnd-Projeto-Ecommerce#readme",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "http": "^0.0.1-security",
+    "http-status": "^1.7.4",
+    "mysql2": "^3.10.0",
+    "sequelize": "^6.37.3"
+  }
+}
