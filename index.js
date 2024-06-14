@@ -23,7 +23,7 @@ app.use((req, res, next) => {
   res.status.apply(status.INTERNAL_SERVER_ERROR).json({ error });
 });
 
-//sincroniza o sequelize: na primeira vez o sistema vai la e cria todas as tabelas no BD. Se force for 'TRUE' ele vai apagar todas as tabelas e registro e vai reinicia-las. O force: false garante integridade e segurança de dados
+//sincroniza o sequelize na primeira vez o sistema cria todas as tabelas no BD. Se force for 'TRUE' ele vai apagar todas as tabelas e registro e vai reinicia-las. O force: false garante integridade e segurança de dados
 sequelize.sync({ force: false }).then(() => {
   //define a porta
   const port = 3003;

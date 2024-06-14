@@ -5,3 +5,4 @@ module.exports = new Sequelize("ecommerce", "root", "123456", {
   dialect: "mysql",
   port: 3306,
 });
+ 

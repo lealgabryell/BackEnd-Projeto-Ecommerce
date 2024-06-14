@@ -9,4 +9,10 @@ router.post("/produtos", ProdutoController.Insert);
 router.get("/clientes", ClienteController.SearchAll);
 router.get("/produtos", ProdutoController.SearchAll);
 
+router.get("/clientes/:cpf", ClienteController.SearchByPk);
+router.get("/produtos/:id", ProdutoController.SearchByPk);
+
+router.put("/clientes/:cpf", ClienteController.Update);
+router.put("/produtos/:id", ProdutoController.Update);
+
 module.exports = router;
