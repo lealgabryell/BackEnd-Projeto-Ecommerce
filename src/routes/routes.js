@@ -15,4 +15,6 @@ router.get("/produtos/:id", ProdutoController.SearchByPk);
 router.put("/clientes/:cpf", ClienteController.Update);
 router.put("/produtos/:id", ProdutoController.Update);
 
+router.delete("/clientes/:cpf", ClienteController.Delete);
+router.delete("/produtos/:id", ProdutoController.Delete);
 module.exports = router;

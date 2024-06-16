@@ -65,25 +65,51 @@ exports.Update = (req, res, next) => {
   const senha = req.body.senha;
   const dataNascimento = req.body.dataNascimento;
 
-  Cliente.findByPk(cpf).then((cliente) => {
-    if (cliente) {
-      cliente.update({
-        cpf: cpf,
-        nome: nome,
-        endereco: endereco,
-        telefone: telefone,
-        email: email,
-        senha: senha,
-        dataNascimento: dataNascimento,
-      },{
-        where: {cpf:cpf}
-      }).then( () => {
-        res.status(status.OK).send();
-      })
-      .catch( (err) => next(error));
-    }else {
-      res.status(status.NOT_FOUND).send();
-    }
-  })
-  .catch(error => next(error));
+  Cliente.findByPk(cpf)
+    .then((cliente) => {
+      if (cliente) {
+        cliente
+          .update(
+            {
+              cpf: cpf,
+              nome: nome,
+              endereco: endereco,
+              telefone: telefone,
+              email: email,
+              senha: senha,
+              dataNascimento: dataNascimento,
+            },
+            {
+              where: { cpf: cpf },
+            }
+          )
+          .then(() => {
+            res.status(status.OK).send();
+          })
+          .catch((err) => next(error));
+      } else {
+        res.status(status.NOT_FOUND).send();
+      }
+    })
+    .catch((error) => next(error));
+};
+
+exports.Delete = (req, res, next) => {
+  const cpf = req.params.cpf;
+  Cliente.findByPk(cpf)
+    .then((cliente) => {
+      if (cliente) {
+        cliente
+          .destroy({
+            where: { cpf: cpf },
+          })
+          .then(() => {
+            res.status(status.OK).send();
+          })
+          .catch((error) => next(error));
+      } else {
+        res.status(status.NOT_FOUND).send();
+      }
+    })
+    .catch((error) => next(error));
 };

@@ -9,7 +9,7 @@ const routes = require("./src/routes/routes.js");
 //inicializa app utilizando a biblioteca use do express
 app.use(express.json());
 
-//define url base do nossos sistema e o resto vai ser p´reenchido pelas rotas
+//define url base do nossos sistema e o resto vai ser preenchido pelas rotas
 app.use("/sistema", routes);
 
 //tratamento de error generalizados;
