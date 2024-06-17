@@ -2,9 +2,13 @@ const http = require("http");
 const express = require("express");
 const status = require("http-status");
 const sequelize = require("./src/database/database");
+const cors = require("cors");
 
 const app = express();
 const routes = require("./src/routes/routes.js");
+
+//permite que outras aplicações acessem o endereço criem interações como GET vindo de comando fetch
+app.use(cors());
 
 //inicializa app utilizando a biblioteca use do express
 app.use(express.json());

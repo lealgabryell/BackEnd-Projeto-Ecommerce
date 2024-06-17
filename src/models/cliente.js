@@ -1,53 +1,53 @@
-const Sequelize = require('sequelize');
-const sequelize = require('../database/database.js');
+const Sequelize = require("sequelize");
+const sequelize = require("../database/database.js");
 
 const Cliente = sequelize.define("cliente", {
   cpf: {
     allowNull: false,
     primaryKey: true,
-    type: Sequelize.STRING(11)
+    type: Sequelize.STRING(11),
   },
-  nome:{
+  nome: {
     allowNull: false,
     type: Sequelize.STRING(100),
     validate: {
-      len: [2, 100]
-    }
+      len: [2, 100],
+    },
   },
-  endereco:{
+  endereco: {
     allowNull: false,
     type: Sequelize.STRING(100),
     validate: {
-      len: [3, 100]
-    }
+      len: [3, 100],
+    },
   },
-  telefone:{
+  telefone: {
     allowNull: false,
     type: Sequelize.STRING(11),
     validate: {
-      len: [11]
-    }
+      len: [11],
+    },
   },
-  email:{
+  email: {
     allowNull: false,
     type: Sequelize.STRING(50),
     validate: {
-      len: [3, 50]
-    }
+      len: [3, 50],
+    },
   },
-  senha:{
+  senha: {
     allowNull: false,
     type: Sequelize.STRING(50),
     validate: {
-      len: [3, 50]
-    }
+      len: [3, 50],
+    },
   },
   dataNascimento: {
     allowNull: false,
     type: Sequelize.DATE(),
     validate: {
-      isDate: true
-    }
-  }
+      isDate: true,
+    },
+  },
 });
 module.exports = Cliente;
